@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<body ng-app="myApp">
+
+<p><a href="#/!">Main</a></p>
+
+<a href="#!urk">URK20CS2043</a>
+<a href="#!U2">URK20CS2053</a>
+<a href="#!U3">URK20CS2057</a>
+
+<p>Click on the links to read about The given register numbers.</p>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.html"
+    })
+    .when("/urk", {
+        templateUrl : "URK20CS2043.html"
+    })
+    .when("/U2", {
+        templateUrl : "URK20CS2053.html"
+    })
+    .when("/U3", {
+        templateUrl : "URK20CS2057.html"
+    });
+});
+</script>
+
+</body>
+</html>
